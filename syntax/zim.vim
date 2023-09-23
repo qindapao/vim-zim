@@ -90,6 +90,12 @@ syn match zimStyleBold /\*\*[^*]*\*\*/ contains=zimConcealStyleBold
 hi zimStyleBold gui=bold term=standout cterm=bold
 syn match zimConcealStyleBold /\*\*/ conceal contained transparent
 
+
+" Style : inline code 当前这个无法生效,只要不是单引号就可以
+syn match zimStyleInlinecode /[']['][^']*['][']/ contains=zimConcealStyleInlinecode
+hi link zimStyleInlinecode DiffAdd
+syn match zimConcealStyleInlinecode /['][']/ conceal contained transparent
+
 " Style : italic
 syn match zimStyleItalic +//[^/]*//+ contains=zimConcealStyleItalic
 hi zimStyleItalic gui=italic cterm=italic
@@ -101,8 +107,9 @@ hi link zimStyleHighlighted DiffChange
 syn match zimConcealStyleHighlighted +__+ conceal contained transparent
 
 " Style : strikethrough
-syn match      zimStyleStrikethrough /\~\~[^~]*\~\~/
+syn match      zimStyleStrikethrough /\~\~[^~]*\~\~/ contains=zimConcealStyleStrikethrough
 hi link zimStyleStrikethrough NonText
+syn match zimConcealStyleStrikethrough /\~\~/ conceal contained transparent
 
 " url link
 syn match   zimEltUrl '\(^\|\s\)\(www\.\|https\?:\/\/\)\S\+\c' contains=@NoSpell
@@ -200,3 +207,5 @@ let b:current_syntax = "zim"
 setlocal conceallevel=1
 setlocal foldmethod=syntax
 syn sync fromstart
+set conceallevel=2
+
