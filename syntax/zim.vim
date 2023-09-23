@@ -27,6 +27,9 @@ if get(g:,'zim_wiki_spelllang',0)
   exe 'silent! setlocal spell spelllang='.(g:zim_wiki_spelllang==1?strpart(expand("$LANG"),0,2):g:zim_wiki_spelllang)
 endif
 
+syntax off
+syntax on
+
 " Zim Header
 syn match zimHeader /^[^:]*:/ contained contains=@NoSpell nextgroup=ZimHeaderParam
 syn match zimHeaderParam /.*/ contained contains=@NoSpell
