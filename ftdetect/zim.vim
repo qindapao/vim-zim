@@ -6,6 +6,9 @@ function! Ftdetect_zim()
   if getline(1) =~ "Content-Type: text/x-zim-wiki"
         \ || expand('%') =~ g:zim_notebooks_dir
     set ft=zim
+    " 先关闭所有感染的语法高亮，然后打开zim自己的
+    syntax off
+    syntax on
   endif
 endfunction
 

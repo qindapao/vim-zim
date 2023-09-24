@@ -1,0 +1,3 @@
+let l:bm_file_version = 1
+let l:bm_sessions = {'default': {'E:\code\zim_relavant\test.py': [{'sign_idx': 9500, 'line_nr': 29, 'content': ''},],'E:\code\zim_relavant\svgconvertprinttobrowser.py': [{'sign_idx': 9501, 'line_nr': 34, 'content': 'This plugin provides a workaround for the lack of'},],}}
+let l:bm_current_session = 'default'
