@@ -122,8 +122,8 @@ hi def link zimEltFile diffNewFile
 " Links
 syn match Identifier /\[\[[^[\]|]*\]\]/
 syn match zimEltLinks /\[\[[^[\]|]*|[^[\]|]*\]\]/ contains=zimEltUrlHiddenA,zimEltUrlHiddenB keepend
-syn match zimEltUrlHiddenA /\[\[[^|]*|/ contained conceal cchar=› transparent
-syn match zimEltUrlHiddenB /\]\]/ contained conceal cchar=¸ transparent
+syn match zimEltUrlHiddenA /\[\[[^|]*|/ contained conceal transparent
+syn match zimEltUrlHiddenB /\]\]/ contained conceal transparent
 try
   silent hi htmlBoldUnderline
   hi def link zimEltLinks htmlBoldUnderline
@@ -170,7 +170,7 @@ endfu
 call s:activate_codeblock()
 
 " Style : verbatim
-syn region zimStyleVerbatim start=/''/ end=/''/ contains=@NoSpell
+" syn region zimStyleVerbatim start=/''/ end=/''/ contains=@NoSpell
 syn region zimStyleVerbatim start=/^\s*'''/ end=/\s*'''/ contains=@NoSpell
 hi def link zimStyleVerbatim	SpecialComment
 
